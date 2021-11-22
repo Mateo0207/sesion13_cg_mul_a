@@ -1,4 +1,6 @@
-// JULIAN MATEO BOSA MOLANO, CODIGO:6000350, PARCIAL 2, Computacion Grafica, OCT 11/2021-2
+// JULIAN MATEO BOSA MOLANO, CODIGO:6000350, EJERCICIO, Computacion Grafica
+
+
 // create a scene, that will hold all our elements such as objects, cameras and lights. 
 var scene = new THREE.Scene();
 var dim = x,y, z;
@@ -79,9 +81,10 @@ function init() {
     Cubo.push(cubo(lado, 0xE2FE00, 'Standart', false));
     Cubo[0].position.set(0, 0, 0);
     scene.add(Cubo[0]);
-    Cubo[0].translateZ(1.5); // movimiento  en el eje z
-    Cubo[0].translateY(2.5); // movimiento  en el eje Y
-    Cubo[0].translateX(1.0); // movimiento  en el eje X
+    Cubo[0].translateZ(1.2); // movimiento  en el eje z
+    Cubo[0].translateY(2.2); // movimiento  en el eje Y
+    Cubo[0].translateX(0.9); // movimiento  en el eje X
+    Cubo[0].rotateY(45); // ROTAR EL CUBO A 45 GRADOS
     Cubo[0].scale.set(0.25, 0.25, 0.25);
     scene.add(Cubo[0]);
 
@@ -89,9 +92,10 @@ function init() {
     Cubo.push(cubo(lado, 0xEA00FE, 'Standart', false));
     Cubo[1].position.set(0, 0, 0);
     scene.add(Cubo[1]);
-    Cubo[1].translateZ(1.5); // movimiento e en el eje Z
-    Cubo[1].translateY(2.0); // movimiento e en el eje Y
-    Cubo[1].translateX(1.0); // movimiento e en el eje X
+    Cubo[1].translateZ(1.2); // movimiento e en el eje Z
+    Cubo[1].translateY(1.8); // movimiento e en el eje Y
+    Cubo[1].translateX(0.9); // movimiento e en el eje X
+    
     Cubo[1].scale.set(0.5, 0.5, 0.5);
     scene.add(Cubo[1]);
 
@@ -100,16 +104,27 @@ function init() {
     Cubo.push(cubo(lado, 0x00FEE1, 'Standart', false));
     Cubo[2].position.set(0, 0, 0);
     scene.add(Cubo[2]);
-    Cubo[2].translateZ(1.5); // movimiento  en el eje Z
+    Cubo[2].translateZ(1.2); // movimiento  en el eje Z
     Cubo[2].translateY(1.0); // movimiento  en el eje Y
-    Cubo[2].translateX(1.0); // movimiento  en el eje X
+    Cubo[2].translateX(0.9); // movimiento  en el eje X
+    Cubo[2].rotateY(45); // ROTAR EL CUBO A 45 GRADOS
 
     scene.add(Cubo[2]); // se añade el cubo a la escena 
+
+    Dim = prompt("INGRESE TAMAÑO DEL CUBO", "");
+    if(Dim != null)
+    {
+    alert("numero: "+ Dim);
+    }   
+    else 
+    {
+    alert("ESCRIBA EL NUMERO");
+    }
 
    
 
     // SE AGREGA LA POSICION DE LA CAMARA 
-    camera.position.set(15, 15, 30);
+    camera.position.set(15, 18, 22);
     camera.lookAt(scene.position);
 
     // SE HACE LA SALIDA DEL RENDER PARA QUE FUNCIONE
